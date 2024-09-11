@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <section id="login-section">
+        <div class="title">
+            <img class="logo-img" src="assets/logo2.png">
+            <h2 class="login-title">Sign Up to Spotify</h2>
+        </div>
+        <hr>
+        <div class="user-info">
+            <div class="user-data">
+                <form id="registerForm">
+                    <div class="label">
+                        <label for="login-username">
+                            <span class="username-label">Email or Username</span>
+                        </label>
+                    </div>
+                    <div class="input">
+                        <input id="login-username" type="text" placeholder="Email or Username">
+                        <span id="usernameError"></span>
+                    </div>
+
+                    <div class="label">
+                        <label for="login-password">
+                            <span class="password-label">Password</span>
+                        </label>
+                    </div>
+                    <div class="input">
+                        <input id="login-password" type="password" placeholder="Password">
+                        <span id="passwordError"></span>
+                    </div>   
+                    
+                    <div class="label">
+                        <label for="confirmPassword">
+                            <span class="password-label">Confirm password</span>
+                        </label>
+                    </div>
+                    <div class="input">
+                        <input id="confirmPassword" type="password" placeholder="Confirm password">
+                        <span id="confirmError"></span>
+                    </div>
+                    <button class="submit">Sign Up</button>
+                </form>
+            </div>
+        </div>   
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
