@@ -5,7 +5,6 @@ const login = document.getElementById("login");
 
 login.addEventListener("click", function (event) {
   event.preventDefault();
-  console.log("Login attempt");
 
   let accounts = JSON.parse(localStorage.getItem("accounts")) || [];
   console.log(accounts);
@@ -22,8 +21,10 @@ login.addEventListener("click", function (event) {
         type: "success",
         duration: 2000,
       });
+      console.log(accounts[i].username);
+      localStorage.setItem("currentUser", JSON.stringify(accounts[i].username));
       setTimeout(() => {
-        window.location.href = "index.html";
+        window.location.href = "home.html";
       }, 2000);
       return;
     }

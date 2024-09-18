@@ -1,42 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="home.css">
-</head>
-<body>
+    <link rel="stylesheet" href="home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
     <section id="navbar">
-        <nav id="navigation-bar">
-            <img class="logo" src="./assets/logo2.png">
-            <div class="search-bar">
-                <a href="#home"><img class="home" src="./assets/whitehome.png"></a>
-                <input type="text" class="search-input" placeholder="What do you want to play?">
-            </div>
-            <a href="#">Install App</a>
-            <img class="profile-pic" src="./assets/profile.jpg">
-        </nav>
+      <nav id="navigation-bar">
+        <img class="logo" src="./assets/logo2.png" />
+        <div class="search-bar">
+          <a href="#home"><img class="home" src="./assets/whitehome.png" /></a>
+          <input
+            type="text"
+            class="search-input"
+            placeholder="What do you want to play?"
+          />
+        </div>
+        <a href="#">Install App</a>
+        <div>
+          <img class="profile-pic" src="./assets/profile.jpg" />
+          <p id="current-user"></p>
+        </div>
+      </nav>
     </section>
 
-    <section id="album-container">
+    <section id="ablum-parent">
+      <div class="album-container">
         <div class="album-top">
-            <h3>Your Library</h3>
-            <div class="btn-container">
-                <button class="playlist-btn">Playlists</button>
-                <button class="playlist-btn">Artists</button>
-            </div>
+          <h3>Your Library</h3>
+          <div class="btn-container">
+            <button class="playlist-btn">Playlists</button>
+            <button class="playlist-btn">Artists</button>
+          </div>
         </div>
         <div class="albums">
-            <div class="album-demo">
-                <img src="./assets/profile.jpg">
-                <div class="album-info">
-                    <p class="name">PhucBui</p>
-                    <p class="type">Playlist | Pitow</p>
-                </div>
+          <div class="album-demo">
+            <img src="./assets/profile.jpg" />
+            <div class="album-info">
+              <p class="name">PhucBui</p>
+              <p class="type">Playlist | Pitow</p>
             </div>
-
+          </div>
         </div>
+      </div>
+      <div class="content">
+        <div class="wrap-topic">
+          <div class="topic">Tất cả</div>
+          <div class="topic">Nhạc</div>
+          <div class="topic">Podcasts</div>
+        </div>
+        <div class="radio">
+          <div class="title-contain">
+            <h2 class="title">Radio phổ biến</h2>
+            <p class="show-all">Hiển tất cả</p>
+          </div>
+          <div id="list-card">
+            <!-- <div class="card">
+              <img src="./assets/profile.jpg" alt="" />
+              <p>Với RHYDER, WEAN, HURRYKN...</p>
+              <div class="box-play">
+                <i class="fa-solid fa-play"></i>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
     </section>
-</body>
+    <script type="module" src="./data.js"></script>
+    <script type="module" src="./home.js"></script>
+  </body>
 </html>
