@@ -39,8 +39,6 @@ form.addEventListener("submit", function (event) {
       - ${confirmPassword.value}`
   );
 
-
-
   let accounts = JSON.parse(localStorage.getItem("accounts")) || [];
   accounts.push({
   username: userName.value,
