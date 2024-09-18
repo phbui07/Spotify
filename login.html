@@ -1,66 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="login.css">
-</head>
-<body>
+    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="toast.css" />
+  </head>
+  <body>
+    <div id="toast"></div>
     <section id="login-section">
-        <div class="title">
-            <img class="logo-img" src="assets/logo2.png">
-            <h2 class="login-title">Log in to Spotify</h2>
-        </div>
-        <hr>
- 
-            <div class="user-info">
-                <div class="user-data">    
-                    <form id ="loginForm">               
-                        <div class="label">
-                            <label for="login-username">
-                                <span class="username-label">Email or Username</span>
-                            </label>
-                        </div>
-                        <div class="input">
-                            <input id="login-username" type="text" placeholder="Email or Username">
-                        </div>
+      <div class="title">
+        <img class="logo-img" src="assets/logo2.png" />
+        <h2 class="login-title">Log in to Spotify</h2>
+      </div>
+      <hr />
 
-                        <div class="label">
-                            <label for="login-password">
-                                <span class="password-label">Email or Username</span>
-                            </label>
-                        </div>
-                        <div class="input">
-                            <input id="login-password" type="password" placeholder="Password">
-                        </div>                
-                    </form>
-                        <div class="login-toggle">
-                            <label class="switch">
-                                <input type="checkbox">
-                                <span class="slider round">Remember me</span>
-                            </label>                  
-                        </div>                   
-                </div> 
-
-                <div class="alternatives">
-
-                    <div class="login-btn">
-                        <button id="login">Log In</button>
-                    </div>
-                    <div class="password-link">
-                        <a href="#">Forgot your Password? </a>
-                    </div>
-                    <hr>
-                    <div class="signup">
-                        <span class="create-acc">Don't have an account?</span>
-                        <span class="signup-link"><a href="signup.html">Sign up for Spotify</a></span>
-                    </div>
-                    
-                </div>
+      <div class="user-info">
+        <div class="user-data">
+          <form id="loginForm">
+            <div class="label">
+              <label for="login-username">
+                <span class="username-label">Email or Username</span>
+              </label>
             </div>
+            <div class="input">
+              <input
+                id="login-username"
+                type="text"
+                placeholder="Email or Username"
+              />
+            </div>
+
+            <div class="label">
+              <label for="login-password">
+                <span class="password-label">Email or Username</span>
+              </label>
+            </div>
+            <div class="input">
+              <input
+                id="login-password"
+                type="password"
+                placeholder="Password"
+              />
+            </div>
+          </form>
+          <div class="login-toggle">
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider round">Remember me</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="alternatives">
+          <div class="login-btn">
+            <button id="login">Log In</button>
+          </div>
+          <div class="password-link">
+            <a href="#">Forgot your Password? </a>
+          </div>
+          <hr />
+          <div class="signup">
+            <span class="create-acc">Don't have an account?</span>
+            <span class="signup-link"
+              ><a href="signup.html">Sign up for Spotify</a></span
+            >
+          </div>
+        </div>
+      </div>
     </section>
 
-    <script scr="script.js"></script>
-</body>
+    <script src="login.js"></script>
+  </body>
 </html>
