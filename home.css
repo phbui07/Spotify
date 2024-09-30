@@ -220,3 +220,19 @@ html {
   right: 10%;
   opacity: 1;
 }
+
+
+#albums{
+  display: flex;
+  padding: 10px;
+  gap:10px;
+  flex-direction: column;
+}
+
+.album-top input{
+  width: 45%;
+  background-color: #202020de;
+  padding: 10px;
+  font-weight: 700;
+  border-radius: 10px;
+}
