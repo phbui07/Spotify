@@ -221,18 +221,34 @@ html {
   opacity: 1;
 }
 
-
-#albums{
+#albums {
   display: flex;
   padding: 10px;
-  gap:10px;
+  gap: 10px;
   flex-direction: column;
 }
 
-.album-top input{
+.album-top input {
+  color: white;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.wrap-input {
+  display: flex;
+  flex-direction: row;
   width: 45%;
   background-color: #202020de;
   padding: 10px;
   font-weight: 700;
   border-radius: 10px;
+}
+
+.wrap-input:focus {
+  border: 1px solid #686868;
+}
+
+.wrap-input i {
+  padding-right: 10px;
 }
