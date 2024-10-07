@@ -83,7 +83,7 @@ html {
   width: 100%;
   flex-direction: row;
   flex-wrap: wrap;
-  height: 1000px;
+  height: 2000px;
 }
 
 .btn-container {
@@ -251,4 +251,58 @@ html {
 
 .wrap-input i {
   padding-right: 10px;
+}
+
+.background img{
+  width: fit-content;
+  position: absolute;
+}
+
+.artist{
+  width: 100%;
+  height: 70%;
+}
+
+.background{
+  height: 30%;
+  width: 100%;
+}
+
+.artistInfo{
+  position: relative;
+  z-index: 1;
+  top:200px;
+  left: 50px;
+}
+
+.artistInfo h1{
+  font-size: 5.5rem;
+  font-weight: 800;
+}
+
+.options{
+  display: flex;
+  z-index: 100;
+  position: relative;
+
+}
+
+.options i, button{
+  margin-right: 40px;
+}
+
+.options i:nth-child(1){
+  font-size: 50px;
+}
+
+.options i:nth-child(3){
+  font-size: 40px;
+  justify-content: center;
+}
+
+.follow{
+  width: 70px;
+  font-size: 16px;
+  border-radius: 20px;
+  justify-content: center;
 }

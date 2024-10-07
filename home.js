@@ -1,4 +1,4 @@
-import { radio_list, album_list } from "./data.js";
+import { radio_list, album_list, songs } from "./data.js";
 // Check khi đăng nhập vào rồi thì không cần phải đăng nhập lại nữa ( không vào trang login nữa)
 function displayCurrentUser() {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -37,13 +37,26 @@ function smallList(album) {
   }
 }
 
+function artistAlbum() {
+  const artistSongs = document.getElementById("music-list");
+  artistSongs.innerHTML = "";
+  for (let i = 0; i < songs.length; i++) {
+    artistSongs.innerHTML += `<div class="song">
+                  <img src="${songs[i].thumbnail}" />
+                  <div class="song-info">
+                  <p class="song-name">${songs[i].info}</p>
+                  <p class="viewers">${songs[i].viewers}</p>
+                  </div>`;
+  }
+}
+
 const searchValue = document.getElementById("search-ablum");
 searchValue.addEventListener("input", function (e) {
-  let valueSearch = e.target.value;
+  let valueSearch = e.target.value.toLowerCase();
   let album = [];
   for (let i = 0; i < album_list.length; i++) {
     console.log(`${album_list[i].name} - ${valueSearch}`);
-    if (album_list[i].name.includes(valueSearch)) {
+    if (album_list[i].name.toLowerCase().includes(valueSearch)) {
       album.push(album_list[i]);
     }
   }
@@ -53,3 +66,4 @@ searchValue.addEventListener("input", function (e) {
 
 displayCurrentUser();
 console.log(album_list);
+

@@ -61,3 +61,13 @@ export const album_list = [
     year: "1998",
   }
 ];
+
+export const songs = [
+  {
+    thumbnail:"./assets/profile.jpg",
+    artist:"ĐEN",
+    duration:"3:20",
+    viewers:"32 000 000",
+    info:"Đi Về Nhà",
+  }
+];
