@@ -307,6 +307,7 @@ button {
 
 .header-artist {
   display: flex;
+  opacity: 0;
   justify-content: flex-start;
   align-items: center;
   gap: 20px;
@@ -318,7 +319,7 @@ button {
   background-color: #4a7e3da6;
   width: 100%;
   top: 8%;
-  transition: 2s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .header-artist i {

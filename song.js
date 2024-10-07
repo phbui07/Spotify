@@ -6,10 +6,10 @@ window.onscroll = function () {
     document.body.scrollTop > 350 ||
     document.documentElement.scrollTop > 350
   ) {
-    artist.style.display = "none";
-    headerArtist.style.display = "flex";
+    artist.style.opacity = 0;
+    headerArtist.style.opacity = 1;
   } else {
-    artist.style.display = "block";
-    headerArtist.style.display = "none";
+    artist.style.opacity = 1;
+    headerArtist.style.opacity = 0;
   }
 };
