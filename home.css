@@ -25,10 +25,14 @@ html {
 }
 
 #navigation-bar {
+  position: fixed;
+  z-index: 999;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding: 15px 0 15px 0;
+  background: var(--background);
+  padding: 5px 0;
+  width: 100%;
 }
 
 .home {
@@ -78,6 +82,7 @@ html {
 }
 
 #ablum-parent {
+  padding-top: 4%;
   display: flex;
   gap: 3%;
   width: 100%;
@@ -253,56 +258,69 @@ html {
   padding-right: 10px;
 }
 
-.background img{
+.background img {
   width: fit-content;
   position: absolute;
 }
 
-.artist{
+.artist {
   width: 100%;
   height: 70%;
 }
 
-.background{
+.background {
   height: 30%;
   width: 100%;
 }
 
-.artistInfo{
-  position: relative;
-  z-index: 1;
-  top:200px;
-  left: 50px;
-}
-
-.artistInfo h1{
+.artistInfo h1 {
   font-size: 5.5rem;
   font-weight: 800;
 }
 
-.options{
+.options {
   display: flex;
   z-index: 100;
   position: relative;
-
 }
 
-.options i, button{
+.options i,
+button {
   margin-right: 40px;
 }
 
-.options i:nth-child(1){
+.options i:nth-child(1) {
   font-size: 50px;
 }
 
-.options i:nth-child(3){
+.options i:nth-child(3) {
   font-size: 40px;
   justify-content: center;
 }
 
-.follow{
+.follow {
   width: 70px;
   font-size: 16px;
   border-radius: 20px;
   justify-content: center;
+}
+
+.header-artist {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  font-size: 24px;
+  position: fixed;
+  z-index: 100;
+  color: white;
+  padding: 10px;
+  background-color: #4a7e3da6;
+  width: 100%;
+  top: 8%;
+  transition: 2s ease-in-out;
+}
+
+.header-artist i {
+  font-size: 50px;
 }

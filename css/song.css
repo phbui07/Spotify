@@ -1,0 +1,43 @@
+.content {
+  width: 400px;
+  padding: 0;
+  border-radius: 10px;
+}
+.artist .bg-wrapper {
+  width: 100%;
+  height: 40vh;
+  position: relative;
+  overflow: hidden;
+  object-fit: cover;
+  background-position-y: center;
+}
+
+.bg-wrapper > img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: -15%;
+}
+
+.artistInfo {
+  position: absolute;
+  bottom: 10%;
+  left: 2%;
+}
+
+.container-songs {
+  width: 100%;
+  padding: 20px;
+}
+
+.blur {
+  position: absolute;
+  z-index: 99;
+  bottom: -30%;
+  height: 150px;
+  width: 100%;
+}
+
+.shadow {
+  width: 100%;
+  position: relative;
+}
