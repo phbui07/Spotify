@@ -279,30 +279,39 @@ html {
 }
 
 .options {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 100%;
   display: flex;
+  flex-direction: row;
   z-index: 100;
   position: relative;
+  justify-content: start;
+  align-items: center;
 }
 
-.options i,
-button {
+.options i, button {
   margin-right: 40px;
 }
 
 .options i:nth-child(1) {
   font-size: 50px;
+  cursor: pointer;
 }
 
 .options i:nth-child(3) {
-  font-size: 40px;
+  font-size: 30px;
   justify-content: center;
+  cursor: pointer;
 }
 
 .follow {
   width: 70px;
+  padding:6px;
   font-size: 16px;
   border-radius: 20px;
-  justify-content: center;
+  cursor: pointer;
 }
 
 .header-artist {
@@ -324,4 +333,35 @@ button {
 
 .header-artist i {
   font-size: 50px;
+}
+
+.song-container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding:5px;
+  cursor: pointer;
+}
+
+.song-container:hover{
+  background-color: #686868;
+  border-radius: 10px;
+}
+
+.img-thumbnail{
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 5%;
+  padding:7px;
+}
+
+.thumbnail{
+  width: 14%;
+  height: 14%;
+  border-radius: 5px;
 }

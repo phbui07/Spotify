@@ -62,12 +62,45 @@ export const album_list = [
   }
 ];
 
-export const songs = [
+export const songsList = [
   {
-    thumbnail:"./assets/profile.jpg",
+    number: "1",
+    thumbnail:"./assets/divenha.png",
     artist:"ĐEN",
     duration:"3:20",
-    viewers:"32 000 000",
+    viewers:"32,000,000",
     info:"Đi Về Nhà",
-  }
+  },
+  {
+    number: "2",
+    thumbnail:"./assets/loinho.png",
+    artist:"ĐEN",
+    duration:"4:12",
+    viewers:"37,000,000",
+    info:"Lối Nhỏ",
+  },
+  {
+    number: "3",
+    thumbnail:"./assets/ctlt.png",
+    artist:"ĐEN",
+    duration:"4:18",
+    viewers:"19,000,000",
+    info:"Cho Tôi Lang Thang",
+  },
+  {
+    number: "4",
+    thumbnail:"./assets/bncp.png",
+    artist:"ĐEN",
+    duration:"4:36",
+    viewers:"31,000,000",
+    info:"Bài Này Chill Phết",
+  },
+  {
+    number: "5",
+    thumbnail:"./assets/nace.png",
+    artist:"ĐEN",
+    duration:"4:01",
+    viewers:"15,000,000",
+    info:"Nấu Ăn Cho Em",
+  },
 ];

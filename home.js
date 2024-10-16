@@ -1,4 +1,4 @@
-import { radio_list, album_list, songs } from "./data.js";
+import { radio_list, album_list, } from "./data.js";
 // Check khi đăng nhập vào rồi thì không cần phải đăng nhập lại nữa ( không vào trang login nữa)
 function displayCurrentUser() {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -9,6 +9,7 @@ function displayCurrentUser() {
   }
   listRadioPopulation();
   smallList(album_list);
+  songsList();
 }
 
 function listRadioPopulation() {
@@ -33,19 +34,6 @@ function smallList(album) {
                   <div class="album-info">
                     <p class="name">${album[i].name}</p>
                     <p class="type">Playlist | ${album[i].year}</p>
-                  </div>`;
-  }
-}
-
-function artistAlbum() {
-  const artistSongs = document.getElementById("music-list");
-  artistSongs.innerHTML = "";
-  for (let i = 0; i < songs.length; i++) {
-    artistSongs.innerHTML += `<div class="song">
-                  <img src="${songs[i].thumbnail}" />
-                  <div class="song-info">
-                  <p class="song-name">${songs[i].info}</p>
-                  <p class="viewers">${songs[i].viewers}</p>
                   </div>`;
   }
 }
