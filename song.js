@@ -1,4 +1,4 @@
-import {songsList} from './data.js';
+import { songsList } from "./data.js";
 const artist = document.getElementsByClassName("artist")[0];
 const headerArtist = document.getElementsByClassName("header-artist")[0];
 // window.onscroll = function () {
@@ -17,9 +17,9 @@ const headerArtist = document.getElementsByClassName("header-artist")[0];
 
 function listSong() {
   const artistList = document.getElementById("music-list");
-  artistList.innerHTML ="";
+  artistList.innerHTML = "";
   for (let i = 0; i < songsList.length; i++) {
-  artistList.innerHTML += `
+    artistList.innerHTML += `
   <div class="song-container">
                 <div class="img-thumbnail">
                   <p class="number">${songsList[i].number}</p>
@@ -32,5 +32,26 @@ function listSong() {
   `;
   }
 }
-console.log(songsList);
+
+const prevSong = document.getElementById("prev-song");
+const nextSong = document.getElementById("next-song");
+const playSong = document.getElementById("play-song");
+const waveSong = document.getElementsByClassName("wave")[0];
+
+let check = false;
+playSong.addEventListener("click", function () {
+  console.log("Click");
+  if (check) {
+    playSong.classList.remove("fa-circle-play");
+    playSong.classList.add("fa-pause");
+    waveSong.classList.add("active");
+    check = false;
+  } else {
+    playSong.classList.remove("fa-pause");
+    playSong.classList.add("fa-circle-play");
+    waveSong.classList.remove("active");
+    check = true;
+  }
+});
+
 listSong();

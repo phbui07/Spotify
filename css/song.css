@@ -216,6 +216,18 @@
   transition: 1s linear;
 }
 
+.player-container .bar .dot::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid #6474ff;
+  top: -4px;
+  left: -4px;
+  box-shadow: inset 0px 0px 3px #8692ff;
+}
+
 .player-container .bar input {
   position: absolute;
   width: 100%;
