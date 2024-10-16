@@ -152,3 +152,21 @@
     transform: translateX(200%);
   }
 }
+
+.player-container{
+  width: 55%;
+  display: flex;
+  flex-direction: row;
+}
+
+.player-options {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-options i{
+  font-size: 30px;
+  padding: 0 10px;
+}
