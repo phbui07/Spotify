@@ -75,6 +75,16 @@ nextSong.addEventListener("click", function () {
 });
 
 const prevSong = document.getElementById("prev-song");
+prevSong.addEventListener("click", function () {
+  audio.pause();
+  index = index === songsList.length - 1 ? 0 : index - 1;
+  audio = new Audio(songsList[index].audio);
+  listCurrentSong(songsList[index]);
+  listCurrentSong(songsList[index]);
+  playSong.classList.remove("fa-circle-play");
+  playSong.classList.add("fa-pause");
+  audio.play();
+})
 
 // const music = new Audio("./assets/divenha.mp3");
 // music.play();
