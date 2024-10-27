@@ -44,6 +44,7 @@ const listCurrentSong = (song = songsList[0]) => {
   songName.innerText = song.info;
   artistName.innerText = song.artist;
 };
+
 const waveSong = document.getElementsByClassName("wave")[0];
 
 const playSong = document.getElementById("play-song");
@@ -77,14 +78,34 @@ nextSong.addEventListener("click", function () {
 const prevSong = document.getElementById("prev-song");
 prevSong.addEventListener("click", function () {
   audio.pause();
-  index = index === songsList.length - 1 ? 0 : index - 1;
+  index = index === 0 ? 0 : index - 1;
   audio = new Audio(songsList[index].audio);
   listCurrentSong(songsList[index]);
   listCurrentSong(songsList[index]);
   playSong.classList.remove("fa-circle-play");
   playSong.classList.add("fa-pause");
   audio.play();
-})
+});
+
+let currentStart = document.getElementById("currentStart");
+let currentEnd = document.getElementById("currentEnd");
+let seek = document.getElementById("seek");
+let bar2 = document.getElementById("bar2");
+let bar1 = document.getElementById("bar1");
+let doc = document.getElementById("doc");
+
+audio.addEventListener("timeupdate", function () {
+  let music_current = audio.currentTime; // thời gian thể hiện là tổng số s hiện tại
+  let music_duration = audio.duration;
+  let progress = (music_current / music_duration) * 100;
+  let min = Math.floor(music_current / 60);
+  let sec = Math.floor(music_current % 60);
+  if (sec < 10) {
+    sec = `0${sec}`;
+  }
+  currentStart.innerText = `${min}:${sec}`;
+  console.log("music_current", music_current);
+});
 
 // const music = new Audio("./assets/divenha.mp3");
 // music.play();
