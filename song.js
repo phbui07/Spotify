@@ -20,38 +20,63 @@ function listSong() {
   artistList.innerHTML = "";
   for (let i = 0; i < songsList.length; i++) {
     artistList.innerHTML += `
-  <div class="song-container">
-                <div class="img-thumbnail">
-                  <p class="number">${songsList[i].number}</p>
-                  <img class="thumbnail" src="${songsList[i].thumbnail}">
-                  <p class="songName">${songsList[i].info}</p>
-                </div>
-                <p class="viewers">${songsList[i].viewers}</p>
-                <p class="duration">${songsList[i].duration}</p>
-  </div>
+      <div class="song-container">
+        <div class="img-thumbnail">
+          <p class="number">${songsList[i].number}</p>
+          <img class="thumbnail" src="${songsList[i].thumbnail}">
+          <p class="songName">${songsList[i].info}</p>
+        </div>
+        <p class="viewers">${songsList[i].viewers}</p>
+        <p class="duration">${songsList[i].duration}</p>
+      </div>
   `;
   }
 }
 
-const prevSong = document.getElementById("prev-song");
-const nextSong = document.getElementById("next-song");
-const playSong = document.getElementById("play-song");
+let check = false;
+let index = 0;
+let audio = new Audio(songsList[index].audio);
+const listCurrentSong = (song = songsList[0]) => {
+  const thumbnail = document.getElementsByClassName("thumbnail-music")[0];
+  const songName = document.getElementsByClassName("music-name")[0];
+  const artistName = document.getElementsByClassName("music-artist")[0];
+  thumbnail.src = song.thumbnail;
+  songName.innerText = song.info;
+  artistName.innerText = song.artist;
+};
 const waveSong = document.getElementsByClassName("wave")[0];
 
-let check = false;
+const playSong = document.getElementById("play-song");
 playSong.addEventListener("click", function () {
-  console.log("Click");
   if (check) {
     playSong.classList.remove("fa-circle-play");
     playSong.classList.add("fa-pause");
     waveSong.classList.add("active");
+    audio.play();
     check = false;
   } else {
     playSong.classList.remove("fa-pause");
     playSong.classList.add("fa-circle-play");
     waveSong.classList.remove("active");
+    audio.pause();
     check = true;
   }
 });
 
+const nextSong = document.getElementById("next-song");
+nextSong.addEventListener("click", function () {
+  audio.pause();
+  index = index === songsList.length - 1 ? 0 : index + 1;
+  audio = new Audio(songsList[index].audio);
+  listCurrentSong(songsList[index]);
+  playSong.classList.remove("fa-circle-play");
+  playSong.classList.add("fa-pause");
+  audio.play();
+});
+
+const prevSong = document.getElementById("prev-song");
+
+// const music = new Audio("./assets/divenha.mp3");
+// music.play();
+listCurrentSong();
 listSong();

@@ -169,8 +169,15 @@
 }
 
 .player-options i {
+  margin: 0 10px;
+  scale: 1;
+  cursor: pointer;
   font-size: 30px;
   padding: 0 10px;
+}
+
+.player-options i:hover {
+  scale: 1.2;
 }
 
 .slider {
@@ -239,57 +246,57 @@
   opacity: 0;
 }
 
-.volume{
-    width: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    gap: 10px;
-  }
+.volume {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+}
 
-.volume i{
+.volume i {
   color: #afafaf;
   cursor: pointer;
 }
 
-  .volume .bar {
-    position: relative;
-    width: 43%;
-    height: 4px;
-    border-radius: 50px;
-    background-color: #eeeeee;
-    margin: 0px 15px 0px 10px;
-  }
+.volume .bar {
+  position: relative;
+  width: 43%;
+  height: 4px;
+  border-radius: 50px;
+  background-color: #eeeeee;
+  margin: 0px 15px 0px 10px;
+}
 
-  .volume .bar .bar2 {
-    position: absolute;
-    border-radius: 50px;
-    width: 20%;
-    height: 100%;
-    background-color: #fff;
-    top: 0;
-  }
+.volume .bar .bar2 {
+  position: absolute;
+  border-radius: 50px;
+  width: 20%;
+  height: 100%;
+  background-color: #fff;
+  top: 0;
+}
 
-  .volume .bar .dot {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #fff;
-    top: -3px;
-    left: 80%;
-    cursor: pointer;
-    transition: 1s linear;
-  }
+.volume .bar .dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  top: -3px;
+  left: 80%;
+  cursor: pointer;
+  transition: 1s linear;
+}
 
-  .volume .bar input {
-    position: absolute;
-    width: 100%;
-    top: -6px;
-    left: 0;
-    cursor: pointer;
-    z-index: 9999;
-    transition: 3s linear;
-    opacity: 0;
-  }
+.volume .bar input {
+  position: absolute;
+  width: 100%;
+  top: -6px;
+  left: 0;
+  cursor: pointer;
+  z-index: 9999;
+  transition: 3s linear;
+  opacity: 0;
+}
