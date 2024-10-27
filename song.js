@@ -105,6 +105,10 @@ audio.addEventListener("timeupdate", function () {
   }
   currentStart.innerText = `${min}:${sec}`;
   console.log("music_current", music_current);
+
+  let endMin = Math.floor(music_duration / 60);
+  let endSec = Math.floor(music_duration % 60);
+  currentEnd.innerText = `${endMin}:${endSec}`;
 });
 
 // const music = new Audio("./assets/divenha.mp3");
