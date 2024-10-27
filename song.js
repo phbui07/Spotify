@@ -33,7 +33,7 @@ function listSong() {
   }
 }
 
-let check = false;
+let check = true;
 let index = 0;
 let audio = new Audio(songsList[index].audio);
 const listCurrentSong = (song = songsList[0]) => {
@@ -92,23 +92,45 @@ let currentEnd = document.getElementById("currentEnd");
 let seek = document.getElementById("seek");
 let bar2 = document.getElementById("bar2");
 let bar1 = document.getElementById("bar1");
-let doc = document.getElementById("doc");
+let dot = document.getElementById("dot");
 
 audio.addEventListener("timeupdate", function () {
   let music_current = audio.currentTime; // thời gian thể hiện là tổng số s hiện tại
   let music_duration = audio.duration;
-  let progress = (music_current / music_duration) * 100;
   let min = Math.floor(music_current / 60);
   let sec = Math.floor(music_current % 60);
   if (sec < 10) {
     sec = `0${sec}`;
   }
   currentStart.innerText = `${min}:${sec}`;
-  console.log("music_current", music_current);
-
   let endMin = Math.floor(music_duration / 60);
   let endSec = Math.floor(music_duration % 60);
   currentEnd.innerText = `${endMin}:${endSec}`;
+  let progress = (music_current / music_duration) * 100;
+  seek.value = progress;
+  bar2.style.width = `${progress}%`;
+  dot.style.left = `${progress}%`;
+});
+
+seek.addEventListener("change", function (e) {
+  let seekTime = audio.duration * (e.target.value / 100);
+  console.log(seekTime, e.target.value);
+  audio.currentTime = seekTime;
+});
+
+audio.addEventListener("ended", function () {
+  audio.pause();
+  index = index === songsList.length - 1 ? 0 : index + 1;
+  audio = new Audio(songsList[index].audio);
+  listCurrentSong(songsList[index]);
+  playSong.classList.remove("fa-circle-play");
+  playSong.classList.add("fa-pause");
+  currentStart.innerText = `0:00`;
+  let endMin = Math.floor(audio.duration / 60);
+  let endSec = Math.floor(audio.duration % 60);
+  console.log(audio, endSec, endMin);
+  currentEnd.innerText = `${endMin}:${endSec}`;
+  audio.play();
 });
 
 // const music = new Audio("./assets/divenha.mp3");
