@@ -1,4 +1,4 @@
-import { radio_list, album_list, } from "./data.js";
+import { radio_list, album_list } from "./data.js";
 // Check khi đăng nhập vào rồi thì không cần phải đăng nhập lại nữa ( không vào trang login nữa)
 function displayCurrentUser() {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -15,13 +15,20 @@ function displayCurrentUser() {
 function listRadioPopulation() {
   const radioList = document.getElementById("list-card");
   for (let i = 0; i < radio_list.length; i++) {
-    radioList.innerHTML += `<div class="card">
-                <img src="${radio_list[i].img}" alt="" />
-                <p>${radio_list[i].title}</p>
-                <div class="box-play">
-                  <i class="fa-solid fa-play"></i>
-                </div>
-              </div>`;
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      <img src="${radio_list[i].img}" alt="" />
+      <p>${radio_list[i].title}</p>
+      <div class="box-play">
+        <i class="fa-solid fa-play"></i>
+      </div>
+    `;
+    // Thêm sự kiện click vào thẻ div .card
+    card.addEventListener("click", () => {
+      window.location.href = "songs.html"; // Điều hướng sang file songs.html
+    });
+    radioList.appendChild(card); // Thêm thẻ card vào danh sách
   }
 }
 
@@ -54,4 +61,3 @@ searchValue.addEventListener("input", function (e) {
 
 displayCurrentUser();
 console.log(album_list);
-
