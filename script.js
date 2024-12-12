@@ -55,4 +55,5 @@ form.addEventListener("submit", function (event) {
   userName.value = "";
   password.value = "";
   confirmPassword.value = "";
+  window.location.href = "login.html";
 });
